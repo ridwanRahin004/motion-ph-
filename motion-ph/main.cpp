@@ -37,12 +37,13 @@ double Ek;
 double l;
 double L;
 double r;
+double v;
 double g=9.89;
 double e;
 double pie=3.1415;
 int main(){
     int action1;
-    int block_ch;
+    char block_ch;
     char cont_or_exit;
 	cout<<"[1] w"<<endl;
 	cout<<"[2] T"<<endl;
@@ -83,8 +84,8 @@ int main(){
     }
 }
 double w_block(){
-        int block_ch;
-        int cont_or_exit;
+        char block_ch;
+        char cont_or_exit;
         cout<<"block [1]"<<endl;
         cout<<"\t[k]"<<endl;
         cout<<"\t[m]"<<endl;
@@ -129,9 +130,9 @@ double w_block(){
         cout<<"\t[Pie]"<<endl;
         cout<<"\t[f]"<<endl;
         cout<<"\n"<<endl;
-        cout<<"Enter block: ";
+        cout<<"Enter block: \t('e' to exit)";
         cin>>block_ch;
-        if(block_ch==1){
+        if(block_ch=='1'){
             cout<<"Enter k: ";
             cin>>k;
             cout<<"Enter m: ";
@@ -154,7 +155,7 @@ double w_block(){
                 ext();
             }
         }
-        else if(block_ch==2){
+        else if(block_ch=='2'){
             cout<<"Enter f: ";
             cin>>f;
             w=(2*pie)*f;
@@ -174,7 +175,95 @@ double w_block(){
             else if(cont_or_exit=='e'){
                 ext();
             }
-}
+        }
+        else if(block_ch=='3'){
+            cout<<"Enter A: ";
+            cin>>A;
+            cout<<"Enter t: ";
+            cin>>t;
+            cout<<"Enter &: ";
+            cin>>dosha;
+            cout<<"Enter x: ";
+            cin>>x;
+            w=(x/(A*sin(t)))-dosha;
+            cout<<"w=(x/A*Sin(t))-&"<<endl;
+            cout<<"w="<<w<<endl;
+            cout<<"\n"<<endl;
+            cout<<"Enter: [1] main menu"<<endl;
+            cout<<"       [0] go back"<<endl;
+            cout<<"       [e] Exit"<<endl;
+            cin>>cont_or_exit;
+            if(cont_or_exit=='1'){
+                main();
+            }
+            else if(cont_or_exit=='0'){
+                w_block();
+            }
+            else if(cont_or_exit=='e'){
+                ext();
+            }
+        }
+        else if(block_ch=='4'){
+            cout<<"Enter T: ";
+            cin>>T;
+            w=(2*pie)/T;
+            cout<<"w=(2*pie)/T"<<endl;
+            cout<<"w="<<w<<endl;
+            cout<<"\n"<<endl;
+            cout<<"Enter: [1] main menu"<<endl;
+            cout<<"       [0] go back"<<endl;
+            cout<<"       [e] Exit"<<endl;
+            cin>>cont_or_exit;
+            if(cont_or_exit=='1'){
+                main();
+            }
+            else if(cont_or_exit=='0'){
+                w_block();
+            }
+            else if(cont_or_exit=='e'){
+                ext();
+            }
+        }
+        else if(block_ch=='5'){
+            cout<<"Enter v: ";
+            cin>>v;
+            cout<<"Enter A: ";
+            cin>>A;
+            cout<<"Enter x: ";
+            cin>>x;
+            w=v*sqrt(pow(A,2)-pow(x,2));
+            cout<<"w=v*√((A^2)-(x^2))"<<endl;
+            cout<<"w="<<w<<endl;
+            cout<<"\n"<<endl;
+            cout<<"Enter: [1] main menu"<<endl;
+            cout<<"       [0] go back"<<endl;
+            cout<<"       [e] Exit"<<endl;
+            cin>>cont_or_exit;
+            if(cont_or_exit=='1'){
+                main();
+            }
+            else if(cont_or_exit=='0'){
+                w_block();
+            }
+            else if(cont_or_exit=='e'){
+                ext();
+            }
+        }
+        else if(block_ch=='6'){
+
+        }
+        else if(block_ch=='7'){
+
+        }
+        else if(block_ch=='8'){
+
+        }
+        else if(block_ch=='9'){
+
+        }
+        else if(block_ch=='10'){
+
+        }
 }
 void ext(){
     cout<<"\n\n"<<endl;
